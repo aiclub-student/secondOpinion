@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="secondOpinion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxG-MS-lQc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fFV-Rb-pTT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1079"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Opinion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHk-BL-YK2">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chest_xray" translatesAutoresizingMaskIntoConstraints="NO" id="at4-wW-ffv">
+                                                <rect key="frame" x="0.0" y="48" width="414" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="0d0-18-egy"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeo-sx-TIn">
+                                                <rect key="frame" x="0.0" y="248" width="414" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Upload X-Ray"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GiF-q8-N1d"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="survive3" translatesAutoresizingMaskIntoConstraints="NO" id="naP-WP-ePS">
+                                                <rect key="frame" x="0.0" y="279" width="414" height="400"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="GCi-ot-Zgv"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kps3" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-ed-t41">
+                                                <rect key="frame" x="0.0" y="679" width="414" height="400"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="d3O-YK-D1g"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fFV-Rb-pTT" firstAttribute="width" secondItem="rFm-7H-yf4" secondAttribute="width" id="8EW-9C-v5A"/>
+                                    <constraint firstItem="fFV-Rb-pTT" firstAttribute="bottom" secondItem="zuV-js-fnh" secondAttribute="bottom" id="Gvy-o1-YQg"/>
+                                    <constraint firstItem="fFV-Rb-pTT" firstAttribute="leading" secondItem="zuV-js-fnh" secondAttribute="leading" id="aEH-bv-iit"/>
+                                    <constraint firstItem="fFV-Rb-pTT" firstAttribute="top" secondItem="zuV-js-fnh" secondAttribute="top" id="bmF-1F-YrR"/>
+                                    <constraint firstItem="fFV-Rb-pTT" firstAttribute="trailing" secondItem="zuV-js-fnh" secondAttribute="trailing" id="jIZ-gY-jpb"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="zuV-js-fnh"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="rFm-7H-yf4"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kxG-MS-lQc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NUE-ql-dOJ"/>
+                            <constraint firstItem="kxG-MS-lQc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="bhu-JN-feT"/>
+                            <constraint firstItem="kxG-MS-lQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dWh-cT-vPj"/>
+                            <constraint firstItem="kxG-MS-lQc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e6x-DV-zmF"/>
+                            <constraint firstItem="kxG-MS-lQc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gWl-6c-7bf"/>
+                            <constraint firstAttribute="bottom" secondItem="kxG-MS-lQc" secondAttribute="bottom" id="taK-gv-3V4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Result1" destination="naP-WP-ePS" id="W89-qs-U5C"/>
+                        <outlet property="Result2" destination="s1T-ed-t41" id="ZA6-Lz-mE2"/>
+                        <outlet property="buttonMain" destination="Yeo-sx-TIn" id="IP5-df-Q23"/>
+                        <outlet property="imageMain" destination="at4-wW-ffv" id="Goc-yJ-tAd"/>
+                        <outlet property="scrollView" destination="kxG-MS-lQc" id="fCR-Ia-Cyz"/>
+                        <outlet property="topLabel" destination="KHk-BL-YK2" id="Afd-id-mlY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chest_xray" width="3537" height="2831"/>
+        <image name="kps3" width="6240" height="4160"/>
+        <image name="survive3" width="634" height="670"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
