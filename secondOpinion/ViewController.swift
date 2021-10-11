@@ -8,7 +8,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import AVFoundation
-class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+import WebKit
+
+
+class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate, WKNavigationDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -18,10 +21,14 @@ class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePi
     @IBOutlet weak var Result1: UIImageView!
     @IBOutlet weak var Result2: UIImageView!
     
+    @IBOutlet weak var webView: WKWebView!
+    
+    
     var APIResult1: String?
     var APIResult2: String?
     let map1=["Cats":"survive1","Dogs":"survive2","Unknown":"survive3"]
     let map2=["Cats":"kps1","Dogs":"kps2","Unknown":"kps3"]
+    let map3=["Cats":"https://www.cnn.com","Dogs":"https://news.google.com","Unknown":"https://wikipedia.org"]
     
     struct AIResponse: Decodable {
         let predicted_label: String?
@@ -76,12 +83,14 @@ class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePi
                 let myJson = JSON(responseJsonStr)
                 let predictedValue = myJson["predicted_label"].string
                 print("API1: Saw predicted value \(String(describing: predictedValue))")
-                let predictionMessage = "Animal Name: " + predictedValue!
                 self.Result1.image=UIImage(named: self.map1[predictedValue!]!)
+                let url=self.map3[predictedValue!]
+                self.webView.load(URLRequest(url: URL(string: url!)!))
             case .failure(let error):
                 print("\n\n API1: Request failed with error: \(error)")
             }
             self.buttonMain.isHidden = false
+
         }
         print("Exiting API1")
     }
@@ -98,7 +107,6 @@ class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePi
                 let myJson = JSON(responseJsonStr)
                 let predictedValue = myJson["predicted_label"].string
                 print("API2: Saw predicted value \(String(describing: predictedValue))")
-                let predictionMessage = "Animal Name: " + predictedValue!
                 self.Result2.image=UIImage(named: self.map2[predictedValue!]!)
             case .failure(let error):
                 print("\n\n API2: Request failed with error: \(error)")
@@ -107,5 +115,12 @@ class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePi
         }
         print("Exiting API2")
     }
+    
+    /*
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+            decisionHandler(.cancel)
+            UIApplication.shared.openURL(url)
+    }
+     */
 }
 

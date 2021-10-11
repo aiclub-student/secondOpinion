@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fFV-Rb-pTT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1079"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1479"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Opinion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHk-BL-YK2">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
@@ -54,6 +54,17 @@
                                                     <constraint firstAttribute="height" constant="400" id="d3O-YK-D1g"/>
                                                 </constraints>
                                             </imageView>
+                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rC-sp-zBB">
+                                                <rect key="frame" x="0.0" y="1079" width="414" height="400"/>
+                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="RMz-hW-ndB"/>
+                                                </constraints>
+                                                <wkWebViewConfiguration key="configuration">
+                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                    <wkPreferences key="preferences"/>
+                                                </wkWebViewConfiguration>
+                                            </wkWebView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -86,6 +97,7 @@
                         <outlet property="imageMain" destination="at4-wW-ffv" id="Goc-yJ-tAd"/>
                         <outlet property="scrollView" destination="kxG-MS-lQc" id="fCR-Ia-Cyz"/>
                         <outlet property="topLabel" destination="KHk-BL-YK2" id="Afd-id-mlY"/>
+                        <outlet property="webView" destination="2rC-sp-zBB" id="xEg-Iz-GlN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
